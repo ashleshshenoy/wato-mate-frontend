@@ -28,11 +28,9 @@ export default function Session(props) {
   }, [qr]);
 
 
-  useEffect(()=>{
-    socket.on("connect", () => {
+  socket.on("connect", () => {
       socket.emit("session")
-    });
-  },[])
+  });
     
   socket.on("code",(qr)=>{ 
     setQr(qr);
