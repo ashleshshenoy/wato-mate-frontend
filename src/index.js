@@ -3,12 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {NextUIProvider} from "@nextui-org/react";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  //<React.StrictMode>
+  <GoogleOAuthProvider clientId="281163685575-bsalvq26n77e8kcvahul393vd5rlps04.apps.googleusercontent.com">
+  <NextUIProvider>
     <App />
-  </React.StrictMode>
+  </NextUIProvider>
+  </GoogleOAuthProvider>
+
+
+  //</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

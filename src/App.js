@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './pages/Home';
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Session from './pages/Session';
+import Campaign from './pages/Campaign';
+import Segment from './pages/Segment';
+import Shopify from './pages/Shopify';
+import ShopifyLogin from './pages/ShopifyLogin';
+import Landing from './pages/Landing';
+
+
+
+
+
 
 function App() {
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Landing/>} />
+        <Route exact path="/login" element={<Home/>} />
+        <Route exact path="/session" element={<Session /> } />
+        <Route exact path="/campaign" element={ <Campaign/>} />
+        <Route exact path="/segment" element={ <Segment/>} />
+        <Route exact path='/shopify' element={ <Shopify/> } />
+        <Route exact path='/shopify-login' element={ <ShopifyLogin/> } />
+      </Routes>
+    </BrowserRouter>
+
+
     </div>
   );
 }
